@@ -110,7 +110,7 @@ public class Config extends Language {
         DEFAULT_VALUES.put("language", "en");
         DEFAULT_VALUES.put("auto-purge", "false");
         DEFAULT_VALUES.put("check-updates", "true");
-        DEFAULT_VALUES.put("error-reporting", "true");
+        DEFAULT_VALUES.put("error-reporting", "false");
         DEFAULT_VALUES.put("api-enabled", "true");
         DEFAULT_VALUES.put("verbose", "true");
         DEFAULT_VALUES.put("default-radius", "10");
