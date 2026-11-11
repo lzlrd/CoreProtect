@@ -31,7 +31,7 @@ The official 24.1 supports Minecraft up to 26.2 and refuses to start on anything
 
 - It accepts Minecraft 26.3 and is built against the Paper 26.3 API.
 - `error-reporting` is off by default, so errors from an unofficial build aren't sent to CoreProtect's author. Turn it on in `config.yml` only if they ask for reports from it.
-- A hopper transfer is logged with at most the world's `hopper-amount` from `spigot.yml` (see below).
+- A hopper transfer is logged with at most the world's `hopper-amount` from `spigot.yml`, unless `limit-hopper-amounts` is turned off (see below).
 - `plugin.yml` says `version: 24.1-26.3-r2` and `branch: lzlrd`.
 
 427 of the official jar's 433 files are byte-identical in this one, which adds one class.
@@ -53,6 +53,8 @@ Tested on Paper 26.3 build 248 and Leaf 26.3 build 22, against the official 24.1
 Leaf with `sleeping-block-entity: true` moves one item per hopper transfer but tells plugins the hopper is moving the whole stack in the slot. The official 24.1 logs what it is told: 16 items drained from a chest are logged as 31 taken, and rolling `#hopper` back puts 31 in the chest.
 
 This build cuts the reported amount down to `hopper-amount` when the server's own hopper code fired the transfer, so the same drain is logged as 16 and rolls back to 16. Transfers a plugin announces are logged as announced, as before. On Paper, and on Leaf with the option off, nothing changes.
+
+The workaround is the `limit-hopper-amounts` option in `config.yml`, on by default. Set it to `false`, globally or in a per-world file, to log what the server reports, as the official jar does. An existing `config.yml` gets the option added on the next start.
 
 One case is still wrong: Leaf with the option on and `hopper-amount` above 1. Leaf moves one item there whatever the setting says, so each logged row can be too high by up to `hopper-amount` minus 1.
 

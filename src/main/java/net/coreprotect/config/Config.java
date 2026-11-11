@@ -86,6 +86,7 @@ public class Config extends Language {
     public boolean ITEM_DROPS;
     public boolean ITEM_PICKUPS;
     public boolean HOPPER_TRANSACTIONS;
+    public boolean LIMIT_HOPPER_AMOUNTS;
     public boolean PLAYER_INTERACTIONS;
     public boolean PLAYER_MESSAGES;
     public boolean PLAYER_COMMANDS;
@@ -144,6 +145,7 @@ public class Config extends Language {
         DEFAULT_VALUES.put("item-drops", "true");
         DEFAULT_VALUES.put("item-pickups", "true");
         DEFAULT_VALUES.put("hopper-transactions", "true");
+        DEFAULT_VALUES.put("limit-hopper-amounts", "true");
         DEFAULT_VALUES.put("player-interactions", "true");
         DEFAULT_VALUES.put("player-messages", "true");
         DEFAULT_VALUES.put("player-commands", "true");
@@ -190,6 +192,7 @@ public class Config extends Language {
         HEADERS.put("item-drops", new String[] { "# Logs items dropped by players." });
         HEADERS.put("item-pickups", new String[] { "# Logs items picked up by players." });
         HEADERS.put("hopper-transactions", new String[] { "# Track all hopper transactions, such as when a hopper removes items from a", "# chest, furnace, or dispenser." });
+        HEADERS.put("limit-hopper-amounts", new String[] { "# Limits the amount logged for a hopper transfer to the \"hopper-amount\" in", "# spigot.yml. Works around servers that report a whole item stack for every", "# item a hopper moves, such as Leaf with \"sleeping-block-entity\" enabled." });
         HEADERS.put("player-interactions", new String[] { "# Track player interactions, such as when a player opens a door, presses", "# a button, or opens a chest. Player interactions can't be rolled back." });
         HEADERS.put("player-messages", new String[] { "# Logs messages that players send in the chat." });
         HEADERS.put("player-commands", new String[] { "# Logs all commands used by players." });
@@ -256,6 +259,7 @@ public class Config extends Language {
         this.ITEM_DROPS = this.getBoolean("item-drops");
         this.ITEM_PICKUPS = this.getBoolean("item-pickups");
         this.HOPPER_TRANSACTIONS = this.getBoolean("hopper-transactions");
+        this.LIMIT_HOPPER_AMOUNTS = this.getBoolean("limit-hopper-amounts");
         this.PLAYER_INTERACTIONS = this.getBoolean("player-interactions");
         this.PLAYER_MESSAGES = this.getBoolean("player-messages");
         this.PLAYER_COMMANDS = this.getBoolean("player-commands");

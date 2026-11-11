@@ -9,10 +9,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.inventory.ItemStack;
 
+import net.coreprotect.config.Config;
+
 /**
  * Hopper transfers are logged with the amount their move event reports. A server moves at most "hopper-amount" items
  * per transfer, but its hopper code can report more: Leaf with sleeping-block-entity enabled reports the whole stack
- * in the source slot while moving one item. This cuts such a report down to what the server can move.
+ * in the source slot while moving one item. This cuts such a report down to what the server can move, unless the
+ * "limit-hopper-amounts" option is turned off.
  */
 final class HopperTransferLimit {
 
@@ -35,7 +38,7 @@ final class HopperTransferLimit {
         ItemStack item = event.getItem();
         // The server fires its own transfers as a subclass of the event. A plugin constructs the event itself and
         // may move more than a hopper does, so its amount is left alone.
-        if (item == null || world == null || event.getClass() == InventoryMoveItemEvent.class) {
+        if (item == null || world == null || event.getClass() == InventoryMoveItemEvent.class || !Config.getConfig(world).LIMIT_HOPPER_AMOUNTS) {
             return item;
         }
 
