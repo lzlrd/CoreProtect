@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.coreprotect</groupId>
   <artifactId>CoreProtect</artifactId>
-  <version>24.1-26.3</version>
+  <version>24.1-26.3-r2</version>
   <properties>
     <project.branch>lzlrd</project.branch>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
