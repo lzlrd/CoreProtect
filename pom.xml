@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.coreprotect</groupId>
   <artifactId>CoreProtect</artifactId>
-  <version>24.1</version>
+  <version>24.1-26.3</version>
   <properties>
-    <project.branch></project.branch>
+    <project.branch>lzlrd</project.branch>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <skipTests>true</skipTests>
     <maven.compiler.source>11</maven.compiler.source>
@@ -218,7 +218,7 @@
     <dependency>
       <groupId>io.papermc.paper</groupId>
       <artifactId>paper-api</artifactId>
-      <version>26.2.build.48-alpha</version> <!-- https://repo.papermc.io/repository/maven-public/ -->
+      <version>26.3.build.248-stable</version> <!-- https://repo.papermc.io/repository/maven-public/ -->
       <scope>provided</scope>
     </dependency>
     <dependency>
