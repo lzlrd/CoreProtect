@@ -8,6 +8,9 @@
 
 # CoreProtect
 
+> [!NOTE]
+> This is an unofficial build of CoreProtect Community Edition 24.1 for Minecraft 26.3. The CoreProtect team does not support it: report problems with it to this fork, not to them. See [This fork](#this-fork).
+
 CoreProtect is a fast, efficient data logging and anti-griefing tool. Inspect, lookup, rollback, and restore any amount of damage without impacting your server performance.
 
 CoreProtect is the [#1 anti-griefing plugin](https://bstats.org/plugin/bukkit/CoreProtect), and has been actively developed since early 2012.
@@ -21,6 +24,26 @@ CoreProtect is the [#1 anti-griefing plugin](https://bstats.org/plugin/bukkit/Co
 | Downloads for MC 1.8 - 1.12: | [coreprotect.net/legacy](https://coreprotect.net/legacy/) |
 | Downloads for Fabric: | [coreprotect.net/fabric](https://coreprotect.net/fabric) |
 | Downloads for Hytale: | [coreprotect.net/hytale](https://coreprotect.net/hytale) |
+
+## This fork
+
+The official 24.1 supports Minecraft up to 26.2 and refuses to start on anything newer. This build is 24.1 with that limit raised to 26.3. It differs from the official jar in three ways:
+
+- It accepts Minecraft 26.3 and is built against the Paper 26.3 API. No other code changed: 428 of the jar's 433 files are byte-identical to the official 24.1 jar.
+- `error-reporting` is off by default, so errors from an unofficial build aren't sent to CoreProtect's author. Turn it on in `config.yml` only if they ask for reports from it.
+- `plugin.yml` says `version: 24.1-26.3` and `branch: lzlrd`.
+
+The database is the official 24.1's: either jar opens a database the other wrote. Move back to an official release once one supports your Minecraft version.
+
+Build with JDK 25 and Maven:
+
+```sh
+mvn package
+```
+
+The jar lands in `target/`.
+
+Tested on Paper 26.3 build 248 and Leaf 26.3 build 22, against the official 24.1 on Paper 26.2 as the baseline.
 
 ## API
 
