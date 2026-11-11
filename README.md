@@ -32,7 +32,7 @@ The official 24.1 supports Minecraft up to 26.2 and refuses to start on anything
 - It accepts Minecraft 26.3 and is built against the Paper 26.3 API.
 - `error-reporting` is off by default, so errors from an unofficial build aren't sent to CoreProtect's author. Turn it on in `config.yml` only if they ask for reports from it.
 - A hopper transfer is logged with at most the world's `hopper-amount` from `spigot.yml`, unless `limit-hopper-amounts` is turned off (see below).
-- `plugin.yml` says `version: 24.1-26.3-r2` and `branch: lzlrd`.
+- `plugin.yml` says `version: 24.1-26.3-r3` and `branch: lzlrd`.
 
 427 of the official jar's 433 files are byte-identical in this one, which adds one class.
 
